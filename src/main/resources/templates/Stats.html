@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style type="text/css">
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Stats</title>
+</head>
+<body>
+<span>Start : </span><span th:text="${start}"> </span><br>
+<span>Limit : </span><span th:text="${limit}"> </span><br>
+<span>Size : </span><span th:text="${size}"> </span><br>
+
+
+<h3>Stats</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th> Card Number </th>
+            <th> Number of Hits </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="l : ${list}" align="center">
+            <td><span id="cardId" th:text="${l.cardId}">  </span></td>
+            <td><span id="lastName1" th:text="${l.hitCount}">  </span></td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<a href="/home">Back</a>
+
+</body>
+</html>
