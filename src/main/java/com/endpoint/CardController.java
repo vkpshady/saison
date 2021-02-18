@@ -2,7 +2,6 @@ package com.endpoint;
 
 import java.util.List;
 
-import com.sun.org.glassfish.external.statistics.Stats;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.entity.CardHitDetail;
 import com.model.CardInformation;
 import com.service.CardService;
-
-import javax.smartcardio.Card;
 
 
 @Controller
