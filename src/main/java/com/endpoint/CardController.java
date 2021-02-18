@@ -47,8 +47,15 @@ public class CardController {
     * */
     @GetMapping("stats")
     public ModelAndView stats(@ModelAttribute("start") int start, @ModelAttribute("limit") int limit) {
-        List<CardHitDetail> listOfCards = cardService.getStats(start, limit);
         ModelAndView mv;
+        if(start<0 || limit<0){
+            mv = new ModelAndView("Error");
+            mv.addObject("errorMessage", "Enter non-negative value");
+            return mv;
+        }
+
+
+        List<CardHitDetail> listOfCards = cardService.getStats(start, limit);
 
         if (listOfCards.isEmpty()) {
             mv = new ModelAndView("Error");
